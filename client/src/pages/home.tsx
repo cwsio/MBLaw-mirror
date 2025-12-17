@@ -25,8 +25,12 @@ const Navigation = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur-sm border-b border-border/40 py-4" : "bg-transparent py-6"}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <div className={`text-2xl font-serif font-bold tracking-tight ${scrolled ? "text-foreground" : "text-white"}`}>
-          MBLAW
+        <div className={`transition-all duration-300 ${scrolled ? "w-32 md:w-40" : "w-40 md:w-48"}`}>
+           <img 
+             src={scrolled ? "/logos/MBLaw-Logo-Color.svg" : "/logos/MBLaw-Logo-White.svg"} 
+             alt="MBLAW" 
+             className="w-full h-auto"
+           />
         </div>
         <div className="hidden md:flex gap-8">
           {["Who We Are", "Services", "Jurisdictions", "Why MBLAW", "Contact"].map((item) => (
@@ -384,8 +388,12 @@ const Footer = () => {
     <footer className="bg-background py-12 border-t border-border">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-2xl font-serif font-bold tracking-tight text-primary">
-            MBLAW
+          <div className="w-40 md:w-48">
+            <img 
+              src="/logos/MBLaw-Logo-Color.svg" 
+              alt="MBLAW" 
+              className="w-full h-auto"
+            />
           </div>
           <div className="text-sm text-muted-foreground text-center md:text-right">
             <p>© 2025 MBLAW. All Rights Reserved.</p>

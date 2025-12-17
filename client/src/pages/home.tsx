@@ -347,7 +347,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground font-bold uppercase tracking-wider mb-1">Phone</p>
-                    <p className="font-serif text-xl">(555) 123-4567</p>
+                    <p className="font-serif text-xl">(917) 294-5238</p>
                   </div>
                 </div>
                 
@@ -357,7 +357,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground font-bold uppercase tracking-wider mb-1">Email</p>
-                    <p className="font-serif text-xl">info@mblaw.com</p>
+                    <p className="font-serif text-xl">mark@mblawpartners.com</p>
                   </div>
                 </div>
 

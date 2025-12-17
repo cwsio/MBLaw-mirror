@@ -382,13 +382,48 @@ const Contact = () => {
 const Footer = () => {
   return (
     <footer className="bg-background py-12 border-t border-border">
-      <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="text-2xl font-serif font-bold tracking-tight text-primary">
-          MBLAW
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="text-2xl font-serif font-bold tracking-tight text-primary">
+            MBLAW
+          </div>
+          <div className="text-sm text-muted-foreground text-center md:text-right">
+            <p>© 2025 MBLAW. All Rights Reserved.</p>
+            <p className="mt-1 text-xs uppercase tracking-wider opacity-70">Attorney Advertising</p>
+          </div>
         </div>
-        <div className="text-sm text-muted-foreground text-center md:text-right">
-          <p>© 2025 MBLAW. All Rights Reserved.</p>
-          <p className="mt-1 text-xs uppercase tracking-wider opacity-70">Attorney Advertising</p>
+        
+        <Separator className="my-8 opacity-50" />
+        
+        {/* CWS Credit Section */}
+        <div className="flex justify-center items-center gap-2">
+          <div className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+            <p className="text-[16px] text-muted-foreground font-medium" style={{ fontFamily: 'Poppins, sans-serif' }}>Website By</p>
+            <a href="https://www.cwsexpress.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group">
+              <div className="w-8 h-8">
+                <svg viewBox="0 0 51 58" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                  <path d="M12.0487 13.775L18.5529 7.01811C19.1661 6.38121 19.1621 5.34386 18.5439 4.71315L14.3921 0.470711C13.774 -0.161012 12.7671 -0.15585 12.1549 0.479997L1.21631 11.8427L0.464897 12.6107C0.152303 12.9296 -0.0019856 13.3528 1.92881e-05 13.775C-0.0019856 14.1972 0.152303 14.6204 0.464897 14.9394L1.21731 15.7084L12.1539 27.0701C12.7671 27.7069 13.774 27.7111 14.3911 27.0794L18.5429 22.8369C19.1611 22.2052 19.1651 21.1678 18.5519 20.532L12.0487 13.775Z" fill="url(#paint1_linear_101_4)"/>
+                  <path d="M6.99418 34.6301C8.2235 34.6301 9.45181 34.6281 10.6811 34.6301C11.4506 34.6321 11.6349 34.7839 11.9045 35.5312C13.5465 40.0864 16.6174 43.1749 21.0116 44.8791C23.0084 45.6543 25.0903 45.9185 27.2083 45.7482C30.4384 45.4881 33.3048 44.269 35.7884 42.1179C37.8233 40.3548 39.2981 38.1841 40.2188 35.6138C40.4973 34.8366 40.7849 34.6301 41.5934 34.6291C43.9228 34.6281 46.2522 34.6291 48.5815 34.6291C48.6677 34.6291 48.7529 34.6281 48.839 34.6311C49.5584 34.6539 49.9581 35.1329 50.1982 35.7954C50.9324 37.8184 50.8403 39.8661 49.9176 41.8087C48.3364 45.1378 45.8691 47.7884 42.8126 49.8826C39.1121 52.4182 34.9801 54.0844 30.5691 54.8967C26.7867 55.5932 23.0163 55.4811 19.2628 54.5459C15.5891 53.6306 12.242 51.9839 9.30058 49.6104C6.18561 47.0968 3.82916 44.0204 2.22896 40.2882C1.40118 38.3582 1.35315 36.3551 2.08339 34.3411C2.31548 33.7006 2.70163 33.2429 3.39691 33.2201C4.59139 33.1814 5.79288 33.1953 6.99418 34.6301Z" fill="url(#paint0_linear_101_4)"/>
+                  <path d="M38.9513 13.775L32.4471 7.01811C31.8339 6.38121 31.8379 5.34386 32.4561 4.71315L36.6079 0.470711C37.226 -0.161012 38.2329 -0.15585 38.8451 0.479997L49.7837 11.8427L50.5351 12.6107C50.8477 12.9296 51.002 13.3528 51 13.775C51.002 14.1972 50.8477 14.6204 50.5351 14.9394L49.7827 15.7084L38.8461 27.0701C38.2329 27.7069 37.226 27.7111 36.6089 27.0794L32.4571 22.8369C31.8389 22.2052 31.8349 21.1678 32.4481 20.532L38.9513 13.775Z" fill="url(#paint2_linear_101_4)"/>
+                  <defs>
+                    <linearGradient id="paint0_linear_101_4" x1="0" y1="0" x2="50" y2="57" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="#069494" />
+                      <stop offset="1" stopColor="#BBE900" />
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_101_4" x1="0" y1="0" x2="50" y2="57" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="#069494" />
+                      <stop offset="1" stopColor="#BBE900" />
+                    </linearGradient>
+                    <linearGradient id="paint2_linear_101_4" x1="0" y1="0" x2="50" y2="57" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="#069494" />
+                      <stop offset="1" stopColor="#BBE900" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <span className="text-[16px] font-semibold text-[#069494]" style={{ fontFamily: 'Poppins, sans-serif' }}>CWS</span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

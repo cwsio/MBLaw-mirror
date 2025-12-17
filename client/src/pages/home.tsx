@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Check, Scale, FileText, MapPin, Phone, Mail, Shield, Clock, DollarSign, Users } from "lucide-react";
+import { Check, Scale, FileText, MapPin, Phone, Mail, Shield, Clock, DollarSign, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import heroImage from "@assets/generated_images/abstract_modern_architecture_detail_for_legal_firm_hero.png";
+
+// Assets
+import heroVideo from "@assets/Hero_-_Video_-_1_1765991718863.mp4";
+import interiorImage from "@assets/Image_interior_1765991718862.jpg";
+import skyscraperImage from "@assets/Image_outside_-_2_1765991718862.jpg";
+import abstractImage from "@assets/Image_outside_1765991718863.jpg";
 
 // --- Components ---
 
@@ -49,14 +54,18 @@ const Navigation = () => {
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Video with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Modern Architecture" 
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
           className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-background z-10" />
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/50 z-10" />
       </div>
 
       <div className="container relative z-20 px-6 pt-20">
@@ -76,7 +85,7 @@ const Hero = () => {
               MBLAW is a boutique legal practice focused exclusively on delivering real estate legal opinion letters for commercial loan transactions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="h-14 px-8 text-base" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Button size="lg" className="h-14 px-8 text-base bg-white text-primary hover:bg-white/90" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
                 Request an Opinion
               </Button>
               <Button size="lg" variant="outline" className="h-14 px-8 text-base bg-transparent text-white border-white/20 hover:bg-white/10 hover:text-white" onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>
@@ -122,24 +131,32 @@ const About = () => {
               </p>
             </motion.div>
           </div>
-          <div className="relative h-full min-h-[400px] bg-secondary/30 rounded-lg overflow-hidden flex items-center justify-center p-8 border border-border/50">
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20 grayscale" />
-            <div className="relative z-10 grid grid-cols-2 gap-4 w-full max-w-md">
-              <div className="bg-background p-6 rounded shadow-sm border border-border/40 flex flex-col items-center text-center">
-                <Shield className="h-8 w-8 mb-3 text-primary" />
-                <span className="font-serif font-semibold">Reliable</span>
+          <div className="relative h-full min-h-[500px] rounded-lg overflow-hidden flex items-end p-8 shadow-xl">
+            <div className="absolute inset-0">
+               <img 
+                src={interiorImage} 
+                alt="Modern Law Firm Interior" 
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+            </div>
+            
+            <div className="relative z-10 grid grid-cols-2 gap-4 w-full">
+              <div className="flex items-center gap-3 text-white">
+                <Shield className="h-5 w-5 text-accent" />
+                <span className="font-serif font-medium">Reliable</span>
               </div>
-              <div className="bg-background p-6 rounded shadow-sm border border-border/40 flex flex-col items-center text-center mt-8">
-                <Check className="h-8 w-8 mb-3 text-primary" />
-                <span className="font-serif font-semibold">Accurate</span>
+              <div className="flex items-center gap-3 text-white">
+                <Check className="h-5 w-5 text-accent" />
+                <span className="font-serif font-medium">Accurate</span>
               </div>
-              <div className="bg-background p-6 rounded shadow-sm border border-border/40 flex flex-col items-center text-center -mt-8">
-                <Clock className="h-8 w-8 mb-3 text-primary" />
-                <span className="font-serif font-semibold">Timely</span>
+              <div className="flex items-center gap-3 text-white">
+                <Clock className="h-5 w-5 text-accent" />
+                <span className="font-serif font-medium">Timely</span>
               </div>
-              <div className="bg-background p-6 rounded shadow-sm border border-border/40 flex flex-col items-center text-center">
-                <Scale className="h-8 w-8 mb-3 text-primary" />
-                <span className="font-serif font-semibold">Precise</span>
+              <div className="flex items-center gap-3 text-white">
+                <Scale className="h-5 w-5 text-accent" />
+                <span className="font-serif font-medium">Precise</span>
               </div>
             </div>
           </div>
@@ -178,10 +195,10 @@ const Services = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="h-full hover:shadow-md transition-shadow duration-300 border-border/60 bg-background">
+              <Card className="h-full hover:shadow-lg transition-all duration-300 border-border/60 bg-background group hover:-translate-y-1">
                 <CardContent className="p-6 flex items-start gap-4 pt-6">
-                  <div className="mt-1 bg-primary/5 p-2 rounded-full">
-                    <FileText className="h-5 w-5 text-primary" />
+                  <div className="mt-1 bg-primary/5 p-2 rounded-full group-hover:bg-primary group-hover:text-white transition-colors">
+                    <FileText className="h-5 w-5 text-primary group-hover:text-white" />
                   </div>
                   <p className="font-medium text-lg leading-snug">{service}</p>
                 </CardContent>
@@ -196,25 +213,35 @@ const Services = () => {
 
 const Jurisdictions = () => {
   return (
-    <section id="jurisdictions" className="py-24 bg-primary text-primary-foreground">
-      <div className="container mx-auto px-6 text-center">
+    <section id="jurisdictions" className="relative py-32 bg-primary text-primary-foreground overflow-hidden">
+       {/* Background Image with Overlay */}
+       <div className="absolute inset-0 z-0">
+        <img 
+          src={abstractImage} 
+          alt="Abstract Architecture" 
+          className="w-full h-full object-cover opacity-40 mix-blend-overlay"
+        />
+        <div className="absolute inset-0 bg-primary/90 z-10" />
+      </div>
+
+      <div className="container relative z-20 mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-4xl font-serif font-bold mb-12">Jurisdictions</h2>
         <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24">
-          <div className="flex flex-col items-center group">
-            <div className="w-24 h-24 rounded-full bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors">
-              <span className="text-3xl font-serif font-bold">NY</span>
+          <div className="flex flex-col items-center group cursor-default">
+            <div className="w-32 h-32 rounded-full border-2 border-white/20 flex items-center justify-center mb-6 group-hover:bg-white group-hover:text-primary transition-all duration-300 group-hover:scale-110">
+              <span className="text-4xl font-serif font-bold">NY</span>
             </div>
-            <h3 className="text-2xl font-medium">New York</h3>
+            <h3 className="text-2xl font-medium tracking-wide">New York</h3>
           </div>
           <div className="h-px w-24 bg-white/20 md:h-24 md:w-px" />
-          <div className="flex flex-col items-center group">
-            <div className="w-24 h-24 rounded-full bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors">
-              <span className="text-3xl font-serif font-bold">NJ</span>
+          <div className="flex flex-col items-center group cursor-default">
+            <div className="w-32 h-32 rounded-full border-2 border-white/20 flex items-center justify-center mb-6 group-hover:bg-white group-hover:text-primary transition-all duration-300 group-hover:scale-110">
+              <span className="text-4xl font-serif font-bold">NJ</span>
             </div>
-            <h3 className="text-2xl font-medium">New Jersey</h3>
+            <h3 className="text-2xl font-medium tracking-wide">New Jersey</h3>
           </div>
         </div>
-        <p className="mt-12 text-white/60 italic">
+        <p className="mt-12 text-white/60 italic font-light">
           (Additional jurisdictions may be available upon request.)
         </p>
       </div>
@@ -247,30 +274,41 @@ const WhyUs = () => {
   ];
 
   return (
-    <section id="why-mblaw" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-serif font-bold mb-16 text-center">Why Clients Choose MBLAW</h2>
-        <div className="grid md:grid-cols-2 gap-x-12 gap-y-12">
-          {features.map((feature, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="flex gap-5"
-            >
-              <div className="shrink-0 mt-1">
-                <div className="w-12 h-12 rounded bg-secondary flex items-center justify-center text-primary">
-                  {feature.icon}
+    <section id="why-mblaw" className="py-0 bg-background overflow-hidden">
+      <div className="grid lg:grid-cols-2">
+        <div className="relative h-[400px] lg:h-auto min-h-full">
+          <img 
+            src={skyscraperImage} 
+            alt="Skyscraper Architecture" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/20 lg:bg-transparent" />
+        </div>
+        
+        <div className="p-12 lg:p-24 flex flex-col justify-center bg-background">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-12">Why Clients Choose MBLAW</h2>
+          <div className="space-y-12">
+            {features.map((feature, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="flex gap-5"
+              >
+                <div className="shrink-0 mt-1">
+                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary border border-border">
+                    {feature.icon}
+                  </div>
                 </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-serif font-bold mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-              </div>
-            </motion.div>
-          ))}
+                <div>
+                  <h3 className="text-xl font-serif font-bold mb-2">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -281,59 +319,60 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 bg-secondary/50">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto bg-background rounded-2xl shadow-sm border border-border/60 overflow-hidden">
-          <div className="grid md:grid-cols-2">
-            <div className="p-12 flex flex-col justify-center">
+        <div className="max-w-5xl mx-auto bg-background rounded-2xl shadow-xl border border-border/60 overflow-hidden flex flex-col md:flex-row">
+            <div className="p-12 md:w-3/5 flex flex-col justify-center">
               <h2 className="text-3xl font-serif font-bold mb-6">Get in Touch</h2>
-              <p className="text-muted-foreground mb-8">
+              <p className="text-muted-foreground mb-10 text-lg">
                 Contact us for fee quotes, availability, or to request an opinion letter.
               </p>
               
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <div className="space-y-8">
+                <div className="flex items-center gap-5 group">
+                  <div className="w-12 h-12 rounded-full bg-primary/5 group-hover:bg-primary group-hover:text-white transition-colors flex items-center justify-center text-primary">
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider">Phone</p>
-                    <p className="font-serif text-lg">(555) 123-4567</p>
+                    <p className="text-xs text-muted-foreground font-bold uppercase tracking-wider mb-1">Phone</p>
+                    <p className="font-serif text-xl">(555) 123-4567</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <div className="flex items-center gap-5 group">
+                  <div className="w-12 h-12 rounded-full bg-primary/5 group-hover:bg-primary group-hover:text-white transition-colors flex items-center justify-center text-primary">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider">Email</p>
-                    <p className="font-serif text-lg">info@mblaw.com</p>
+                    <p className="text-xs text-muted-foreground font-bold uppercase tracking-wider mb-1">Email</p>
+                    <p className="font-serif text-xl">info@mblaw.com</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <div className="flex items-center gap-5 group">
+                  <div className="w-12 h-12 rounded-full bg-primary/5 group-hover:bg-primary group-hover:text-white transition-colors flex items-center justify-center text-primary">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider">Licensed In</p>
-                    <p className="font-serif text-lg">New York & New Jersey</p>
+                    <p className="text-xs text-muted-foreground font-bold uppercase tracking-wider mb-1">Licensed In</p>
+                    <p className="font-serif text-xl">New York & New Jersey</p>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="bg-primary p-12 text-primary-foreground flex flex-col justify-center">
-              <h3 className="text-2xl font-serif font-bold mb-6">MBLAW</h3>
-              <div className="space-y-1 mb-8">
-                <p className="text-lg font-medium">Manes Blumenfrucht, Esq.</p>
+            <div className="bg-primary p-12 md:w-2/5 text-primary-foreground flex flex-col justify-center relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-8 opacity-10">
+                <Scale className="w-32 h-32" />
+              </div>
+              <h3 className="text-3xl font-serif font-bold mb-6 relative z-10">MBLAW</h3>
+              <div className="space-y-2 mb-8 relative z-10">
+                <p className="text-xl font-medium">Manes Blumenfrucht, Esq.</p>
                 <p className="text-white/70">Licensed in New York & New Jersey</p>
               </div>
-              <Separator className="bg-white/20 mb-8" />
-              <p className="text-white/80 leading-relaxed italic">
+              <Separator className="bg-white/20 mb-8 relative z-10" />
+              <p className="text-white/80 leading-relaxed italic relative z-10">
                 "We prioritize clarity, responsiveness, and professional precision—enabling clients to proceed with confidence."
               </p>
             </div>
-          </div>
         </div>
       </div>
     </section>
@@ -349,7 +388,7 @@ const Footer = () => {
         </div>
         <div className="text-sm text-muted-foreground text-center md:text-right">
           <p>© 2025 MBLAW. All Rights Reserved.</p>
-          <p className="mt-1 text-xs uppercase tracking-wider">Attorney Advertising</p>
+          <p className="mt-1 text-xs uppercase tracking-wider opacity-70">Attorney Advertising</p>
         </div>
       </div>
     </footer>

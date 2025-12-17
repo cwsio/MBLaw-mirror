@@ -10,7 +10,6 @@ import heroVideo from "@assets/Hero_-_Video_-_1_1765991718863.mp4";
 import interiorImage from "@assets/Image_interior_1765991718862.jpg";
 import skyscraperImage from "@assets/Image_outside_-_2_1765991718862.jpg";
 import abstractImage from "@assets/Image_outside_1765991718863.jpg";
-import contactBg from "@assets/generated_images/elegant_geometric_background_for_contact_section.png";
 
 // --- Components ---
 
@@ -326,15 +325,15 @@ const Contact = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src={contactBg} 
-          alt="Geometric Background" 
+          src={skyscraperImage} 
+          alt="Office Building" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-background/80 z-10" />
+        <div className="absolute inset-0 bg-primary/90 z-10" />
       </div>
 
       <div className="container relative z-20 mx-auto px-6">
-        <div className="max-w-5xl mx-auto bg-background/80 backdrop-blur-md rounded-2xl shadow-xl border border-border/60 overflow-hidden flex flex-col md:flex-row">
+        <div className="max-w-5xl mx-auto bg-background/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-border/60 overflow-hidden flex flex-col md:flex-row">
             <div className="p-12 md:w-3/5 flex flex-col justify-center">
               <h2 className="text-3xl font-serif font-bold mb-6">Get in Touch</h2>
               <p className="text-muted-foreground mb-10 text-lg">

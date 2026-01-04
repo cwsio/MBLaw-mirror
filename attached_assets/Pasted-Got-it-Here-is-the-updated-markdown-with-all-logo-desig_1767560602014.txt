@@ -1,0 +1,76 @@
+Got it. Here is the updated markdown, with all logo-design edits removed (except using the color logo), and with the disclaimer content rewritten for MB Law using your domain and email.
+
+⸻
+
+Updated Project Comments
+	1.	Use the color version of the MB Law logo on the landing page instead of the white version.
+	2.	Ensure there is a space between MB and Law throughout the site.
+	3.	Add a little more blue to the landing page.
+	4.	Remove “real estate legal opinion letters” above the tagline.
+	5.	Modernize the font on the language page.
+	6.	See attached redline.
+	7.	The Jurisdictions section should list only Delaware for now.
+
+Who We Are
+	•	Incorporate more blue into the image.
+	•	Replace “Timely” with “Efficient.”
+	•	Replace the scale icon with a pen or paper icon for “Precise.”
+	•	Confirm whether my name should appear here.
+
+Get in Touch
+	•	Either remove the icon or change it to a pen or paper icon.
+	•	Replace the quote with one of the following:
+	•	Precision in Every Opinion.
+	•	Focused on providing clear, dependable legal opinions.
+	•	Change Manes to Mark.
+	•	Update email address to service@mblawpartners.com
+
+	8.	Move the section “Why Clients Choose MB Law” further up the page.
+	9.	In the Why Clients section, replace “specialized” with “dedicated” and remove the word “solely.”
+	10.	Add the following pages to the website:
+	•	Privacy Policy (structure similar to: https://www.bayardlaw.com/privacy-policy)
+	•	Disclaimer (structure similar to: https://www.bayardlaw.com/disclaimer)
+	•	Legal Notice
+	•	Accessibility (structure similar to: https://www.bayardlaw.com/accessibility)
+
+⸻
+
+Disclaimer
+
+Terms of Use
+
+The term “the Firm” on this website refers to MB Law, a limited liability partnership. Your use of this website is subject to the following terms and conditions. By accessing this website, you acknowledge that you have read and accept these terms and conditions.
+
+No Legal Services or Attorney-Client Relationship
+
+The information on this website is provided solely for informational purposes and does not constitute legal advice. This information is not intended to create, and receipt of it does not constitute, an attorney-client relationship. Do not send confidential information until you have spoken with one of our attorneys and received authorization to send such information.
+
+Providing information to the Firm, whether through email links on this website or otherwise, does not create an attorney-client relationship without an express agreement from the Firm and does not prevent the Firm from representing other parties in related matters. The Firm expressly disclaims all liability with respect to actions taken or not taken based on any content on this website.
+
+No Warranties
+
+This website and all information provided are offered “as is.” The Firm makes no warranties or representations of any kind regarding the accuracy or completeness of the information.
+
+Limitation of Liability
+
+Your use of this website is at your own risk. Materials may not reflect the most current legal developments and may be updated without notice. The Firm is not responsible for any errors or omissions or for any damages arising from the use or performance of this website.
+
+Copyright Notice
+
+All website content including design, text, and graphics is the property of MB Law. You may view, copy, download, and print materials for personal, non-commercial use only, provided that copyright and permission notices remain intact and no modifications are made.
+
+Email Disclaimer
+
+Any email sent from the Firm and all attachments are intended only for the named recipient and may contain privileged and confidential information. Unauthorized use, copying, or distribution is prohibited. If you received an email in error, please notify the sender immediately and delete the message.
+
+Contact Information
+
+For questions about this website, contact service@mblawpartners.com.
+
+⸻
+
+Accessibility
+
+MB Law is committed to providing a website that is accessible to all users. We follow Web Content Accessibility Guidelines (WCAG 2.0) and ARIA specifications to ensure a positive experience for all visitors, including those using assistive technologies.
+
+If you experience difficulty accessing any part of this website, please contact us at service@mblawpartners.com and we will gladly assist you.

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Check, Scale, FileText, MapPin, Phone, Mail, Shield, Clock, DollarSign, Users } from "lucide-react";
+import { Check, Scale, FileText, MapPin, Phone, Mail, Shield, Clock, DollarSign, Users, PenTool, Link } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -27,13 +27,13 @@ const Navigation = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <div className={`transition-all duration-300 ${scrolled ? "w-16 md:w-20" : "w-24 md:w-28"}`}>
            <img 
-             src={scrolled ? "/logos/MBLaw-Logo-Color.svg" : "/logos/MBLaw-Logo-White.svg"} 
-             alt="MBLAW" 
-             className="w-full h-auto"
+             src="/logos/MBLaw-Logo-Color.svg" 
+             alt="MB LAW" 
+             className="w-full h-full"
            />
         </div>
         <div className="hidden md:flex gap-8">
-          {["Who We Are", "Services", "Jurisdictions", "Why MBLAW", "Contact"].map((item) => (
+          {["Who We Are", "Why MB LAW", "Services", "Jurisdictions", "Contact"].map((item) => (
             <a 
               key={item} 
               href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
@@ -69,7 +69,9 @@ const Hero = () => {
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/50 z-10" />
+        {/* Increased blue overlay as requested */}
+        <div className="absolute inset-0 bg-primary/40 mix-blend-multiply z-10" />
+        <div className="absolute inset-0 bg-black/30 z-10" />
       </div>
 
       <div className="container relative z-20 px-6 pt-20">
@@ -79,14 +81,13 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-white/80 font-medium tracking-widest uppercase text-sm mb-4">Real Estate Legal Opinion Letters</h2>
             <h1 className="text-5xl md:text-7xl font-serif font-bold text-white leading-[1.1] mb-6">
               Reliable service.<br />
               Clear guidance.<br />
               <span className="text-white/60">Efficient execution.</span>
             </h1>
             <p className="text-lg text-white/70 max-w-xl mb-8 leading-relaxed">
-              MBLAW is a boutique legal practice focused exclusively on delivering real estate legal opinion letters for commercial loan transactions.
+              MB LAW is a boutique legal practice focused exclusively on delivering real estate legal opinion letters for commercial loan transactions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="h-14 px-8 text-base bg-white text-primary hover:bg-white/90" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
@@ -125,10 +126,10 @@ const About = () => {
               className="space-y-6 text-lg text-muted-foreground leading-relaxed"
             >
               <p>
-                MBLAW is a boutique legal practice focused exclusively on delivering real estate legal opinion letters for commercial loan transactions.
+                MB LAW is a boutique legal practice focused exclusively on delivering real estate legal opinion letters for commercial loan transactions.
               </p>
               <p>
-                With extensive experience across complex financing structures, MBLAW provides borrowers and lenders with accurate, timely, and meticulously prepared opinion letters that support smooth closings and reduce friction in the deal process.
+                With extensive experience across complex financing structures, MB LAW provides borrowers and lenders with accurate, timely, and meticulously prepared opinion letters that support smooth closings and reduce friction in the deal process.
               </p>
               <p>
                 We prioritize clarity, responsiveness, and professional precision—enabling clients to proceed with confidence at every stage of their transaction.
@@ -142,6 +143,7 @@ const About = () => {
                 alt="Modern Law Firm Interior" 
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                />
+               <div className="absolute inset-0 bg-primary/30 mix-blend-multiply" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
             </div>
             
@@ -156,13 +158,79 @@ const About = () => {
               </div>
               <div className="flex items-center gap-3 text-white">
                 <Clock className="h-5 w-5 text-accent" />
-                <span className="font-serif font-medium">Timely</span>
+                <span className="font-serif font-medium">Efficient</span>
               </div>
               <div className="flex items-center gap-3 text-white">
-                <Scale className="h-5 w-5 text-accent" />
+                <PenTool className="h-5 w-5 text-accent" />
                 <span className="font-serif font-medium">Precise</span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const WhyUs = () => {
+  const features = [
+    {
+      icon: <Clock className="h-6 w-6" />,
+      title: "Responsive Service",
+      description: "Transactions move quickly, and so do we. MB LAW is committed to delivering prompt communication and reliable turnaround times."
+    },
+    {
+      icon: <DollarSign className="h-6 w-6" />,
+      title: "Competitive, Predictable Fees",
+      description: "As a specialized opinion practice, we offer flat-fee opinion services with transparent pricing allowing clients to plan ahead."
+    },
+    {
+      icon: <PenTool className="h-6 w-6" />,
+      title: "Focused Expertise",
+      description: "Our practice is dedicated to real estate legal opinion work, allowing us to provide precise, well-crafted opinions."
+    },
+    {
+      icon: <Users className="h-6 w-6" />,
+      title: "Seamless Collaboration",
+      description: "We work directly with borrower’s counsel, lender’s counsel, and deal teams to streamline the closing process."
+    }
+  ];
+
+  return (
+    <section id="why-mb-law" className="py-24 bg-background overflow-hidden border-t border-border/40">
+      <div className="grid lg:grid-cols-2">
+        <div className="relative h-[400px] lg:h-auto min-h-full order-2 lg:order-1">
+          <img 
+            src={skyscraperImage} 
+            alt="Skyscraper Architecture" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/20 lg:bg-transparent" />
+        </div>
+        
+        <div className="p-12 lg:p-24 flex flex-col justify-center bg-background order-1 lg:order-2">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-12">Why Clients Choose MB LAW</h2>
+          <div className="space-y-12">
+            {features.map((feature, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="flex gap-5"
+              >
+                <div className="shrink-0 mt-1">
+                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary border border-border">
+                    {feature.icon}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-serif font-bold mb-2">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
@@ -186,7 +254,7 @@ const Services = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Opinion Services</h2>
           <p className="text-muted-foreground text-lg">
-            MBLAW prepares a range of commonly required real estate opinion letters with a focus on consistency, accuracy, and closing-ready language tailored to the needs of each deal.
+            MB LAW prepares a range of commonly required real estate opinion letters with a focus on consistency, accuracy, and closing-ready language tailored to the needs of each deal.
           </p>
         </div>
 
@@ -230,90 +298,17 @@ const Jurisdictions = () => {
 
       <div className="container relative z-20 mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-4xl font-serif font-bold mb-12">Jurisdictions</h2>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24">
+        <div className="flex justify-center items-center">
           <div className="flex flex-col items-center group cursor-default">
             <div className="w-32 h-32 rounded-full border-2 border-white/20 flex items-center justify-center mb-6 group-hover:bg-white group-hover:text-primary transition-all duration-300 group-hover:scale-110">
-              <span className="text-4xl font-serif font-bold">NY</span>
+              <span className="text-4xl font-serif font-bold">DE</span>
             </div>
-            <h3 className="text-2xl font-medium tracking-wide">New York</h3>
-          </div>
-          <div className="h-px w-24 bg-white/20 md:h-24 md:w-px" />
-          <div className="flex flex-col items-center group cursor-default">
-            <div className="w-32 h-32 rounded-full border-2 border-white/20 flex items-center justify-center mb-6 group-hover:bg-white group-hover:text-primary transition-all duration-300 group-hover:scale-110">
-              <span className="text-4xl font-serif font-bold">NJ</span>
-            </div>
-            <h3 className="text-2xl font-medium tracking-wide">New Jersey</h3>
+            <h3 className="text-2xl font-medium tracking-wide">Delaware</h3>
           </div>
         </div>
         <p className="mt-12 text-white/60 italic font-light">
           (Additional jurisdictions may be available upon request.)
         </p>
-      </div>
-    </section>
-  );
-};
-
-const WhyUs = () => {
-  const features = [
-    {
-      icon: <Clock className="h-6 w-6" />,
-      title: "Responsive Service",
-      description: "Transactions move quickly, and so do we. MBLAW is committed to delivering prompt communication and reliable turnaround times."
-    },
-    {
-      icon: <DollarSign className="h-6 w-6" />,
-      title: "Competitive, Predictable Fees",
-      description: "As a specialized opinion practice, we offer flat-fee opinion services with transparent pricing allowing clients to plan ahead."
-    },
-    {
-      icon: <Scale className="h-6 w-6" />,
-      title: "Focused Expertise",
-      description: "Our practice is dedicated solely to real estate legal opinion work, allowing us to provide precise, well-crafted opinions."
-    },
-    {
-      icon: <Users className="h-6 w-6" />,
-      title: "Seamless Collaboration",
-      description: "We work directly with borrower’s counsel, lender’s counsel, and deal teams to streamline the closing process."
-    }
-  ];
-
-  return (
-    <section id="why-mblaw" className="py-0 bg-background overflow-hidden">
-      <div className="grid lg:grid-cols-2">
-        <div className="relative h-[400px] lg:h-auto min-h-full">
-          <img 
-            src={skyscraperImage} 
-            alt="Skyscraper Architecture" 
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/20 lg:bg-transparent" />
-        </div>
-        
-        <div className="p-12 lg:p-24 flex flex-col justify-center bg-background">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-12">Why Clients Choose MBLAW</h2>
-          <div className="space-y-12">
-            {features.map((feature, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex gap-5"
-              >
-                <div className="shrink-0 mt-1">
-                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary border border-border">
-                    {feature.icon}
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-serif font-bold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
@@ -357,7 +352,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground font-bold uppercase tracking-wider mb-1">Email</p>
-                    <p className="font-serif text-xl">mark@mblawpartners.com</p>
+                    <p className="font-serif text-xl">service@mblawpartners.com</p>
                   </div>
                 </div>
 
@@ -375,16 +370,16 @@ const Contact = () => {
             
             <div className="bg-primary p-12 md:w-2/5 text-primary-foreground flex flex-col justify-center relative overflow-hidden">
               <div className="absolute top-0 right-0 p-8 opacity-10">
-                <Scale className="w-32 h-32" />
+                <PenTool className="w-32 h-32" />
               </div>
-              <h3 className="text-3xl font-serif font-bold mb-6 relative z-10">MBLAW</h3>
+              <h3 className="text-3xl font-serif font-bold mb-6 relative z-10">MB LAW</h3>
               <div className="space-y-2 mb-8 relative z-10">
-                <p className="text-xl font-medium">Manes Blumenfrucht, Esq.</p>
+                <p className="text-xl font-medium">Mark Blumenfrucht, Esq.</p>
                 <p className="text-white/70">Licensed in New York & New Jersey</p>
               </div>
               <Separator className="bg-white/20 mb-8 relative z-10" />
               <p className="text-white/80 leading-relaxed italic relative z-10">
-                "We prioritize clarity, responsiveness, and professional precision—enabling clients to proceed with confidence."
+                "Precision in Every Opinion."
               </p>
             </div>
         </div>
@@ -397,17 +392,23 @@ const Footer = () => {
   return (
     <footer className="bg-background py-12 border-t border-border">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div className="w-40 md:w-48">
             <img 
               src="/logos/MBLaw-Logo-Color.svg" 
-              alt="MBLAW" 
-              className="w-full h-auto"
+              alt="MB LAW" 
+              className="w-full h-full"
             />
           </div>
-          <div className="text-sm text-muted-foreground text-center md:text-right">
-            <p>© 2025 MBLAW. All Rights Reserved.</p>
-            <p className="mt-1 text-xs uppercase tracking-wider opacity-70">Attorney Advertising</p>
+          <div className="flex flex-col md:items-end gap-2 text-sm text-muted-foreground">
+            <div className="flex flex-wrap gap-4 md:gap-6 mb-2">
+              <a href="/disclaimer" className="hover:text-primary transition-colors">Disclaimer</a>
+              <a href="/terms" className="hover:text-primary transition-colors">Terms of Use</a>
+              <a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a>
+              <a href="/accessibility" className="hover:text-primary transition-colors">Accessibility</a>
+            </div>
+            <p>© 2025 MB LAW. All Rights Reserved.</p>
+            <p className="text-xs uppercase tracking-wider opacity-70">Attorney Advertising</p>
           </div>
         </div>
         
@@ -454,9 +455,9 @@ export default function Home() {
       <Navigation />
       <Hero />
       <About />
+      <WhyUs />
       <Services />
       <Jurisdictions />
-      <WhyUs />
       <Contact />
       <Footer />
     </div>

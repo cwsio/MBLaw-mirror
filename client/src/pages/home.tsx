@@ -187,63 +187,62 @@ const About = () => {
 const WhyUs = () => {
   const features = [
     {
-      icon: <Clock className="h-6 w-6" />,
+      icon: <Clock className="h-8 w-8" />,
       title: "Responsive Service",
       description: "Transactions move quickly, and so do we. MB LAW is committed to delivering prompt communication and reliable turnaround times."
     },
     {
-      icon: <DollarSign className="h-6 w-6" />,
-      title: "Competitive, Predictable Fees",
-      description: "As a specialized opinion practice, we offer flat-fee opinion services with transparent pricing allowing clients to plan ahead."
+      icon: <DollarSign className="h-8 w-8" />,
+      title: "Competitive Fees",
+      description: "As a dedicated opinion practice, we offer flat-fee opinion services with transparent pricing allowing clients to plan ahead."
     },
     {
-      icon: <PenTool className="h-6 w-6" />,
+      icon: <PenTool className="h-8 w-8" />,
       title: "Focused Expertise",
       description: "Our practice is dedicated to real estate legal opinion work, allowing us to provide precise, well-crafted opinions."
     },
     {
-      icon: <Users className="h-6 w-6" />,
+      icon: <Users className="h-8 w-8" />,
       title: "Seamless Collaboration",
       description: "We work directly with borrower’s counsel, lender’s counsel, and deal teams to streamline the closing process."
     }
   ];
 
   return (
-    <section id="why-mb-law" className="py-24 bg-background overflow-hidden border-t border-border/40">
-      <div className="grid lg:grid-cols-2">
-        <div className="relative h-[400px] lg:h-auto min-h-full order-2 lg:order-1">
-          <img 
-            src={skyscraperImage} 
-            alt="Skyscraper Architecture" 
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/20 lg:bg-transparent" />
+    <section id="why-mb-law" className="relative py-32 overflow-hidden">
+      {/* Background Image with Heavy Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={skyscraperImage} 
+          alt="Skyscraper Architecture" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-primary/95 mix-blend-multiply z-10" />
+      </div>
+
+      <div className="container relative z-20 mx-auto px-6">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">Why Clients Choose MB LAW</h2>
+          <div className="h-1 w-24 bg-white/20 mx-auto rounded-full" />
         </div>
-        
-        <div className="p-12 lg:p-24 flex flex-col justify-center bg-background order-1 lg:order-2">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-12">Why Clients Choose MB LAW</h2>
-          <div className="space-y-12">
-            {features.map((feature, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex gap-5"
-              >
-                <div className="shrink-0 mt-1">
-                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary border border-border">
-                    {feature.icon}
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-serif font-bold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+          {features.map((feature, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="group text-center"
+            >
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 text-white mb-8 border border-white/10 group-hover:bg-white group-hover:text-primary transition-all duration-500 transform group-hover:scale-110 shadow-lg">
+                {feature.icon}
+              </div>
+              <h3 className="text-xl font-serif font-bold text-white mb-4">{feature.title}</h3>
+              <p className="text-white/70 leading-relaxed text-sm md:text-base">{feature.description}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

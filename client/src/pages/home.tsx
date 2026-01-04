@@ -37,14 +37,14 @@ const Navigation = () => {
             <a 
               key={item} 
               href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-              className={`text-sm font-medium hover:opacity-80 transition-opacity ${scrolled ? "text-foreground" : "text-white/90"}`}
+              className="text-sm font-medium text-primary hover:opacity-80 transition-opacity"
             >
               {item}
             </a>
           ))}
         </div>
         <Button 
-          variant={scrolled ? "default" : "secondary"} 
+          variant="default"
           className="font-medium"
           onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
         >
@@ -69,9 +69,8 @@ const Hero = () => {
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        {/* Increased blue overlay as requested */}
-        <div className="absolute inset-0 bg-primary/40 mix-blend-multiply z-10" />
-        <div className="absolute inset-0 bg-black/30 z-10" />
+        {/* White-ish overlay as requested for better contrast with blue text */}
+        <div className="absolute inset-0 bg-white/85 z-10" />
       </div>
 
       <div className="container relative z-20 px-6 pt-20">
@@ -81,19 +80,19 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-serif font-bold text-white leading-[1.1] mb-6">
+            <h1 className="text-5xl md:text-7xl font-serif font-bold text-primary leading-[1.1] mb-6">
               Reliable service.<br />
               Clear guidance.<br />
-              <span className="text-white/60">Efficient execution.</span>
+              <span className="text-primary/60">Efficient execution.</span>
             </h1>
-            <p className="text-lg text-white/70 max-w-xl mb-8 leading-relaxed">
+            <p className="text-lg text-primary/80 max-w-xl mb-8 leading-relaxed font-medium">
               MB LAW is a boutique legal practice focused exclusively on delivering real estate legal opinion letters for commercial loan transactions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="h-14 px-8 text-base bg-white text-primary hover:bg-white/90" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Button size="lg" className="h-14 px-8 text-base bg-primary text-white hover:bg-primary/90" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
                 Request an Opinion
               </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8 text-base bg-transparent text-white border-white/20 hover:bg-white/10 hover:text-white" onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Button size="lg" variant="outline" className="h-14 px-8 text-base bg-transparent text-primary border-primary/20 hover:bg-primary/5 hover:text-primary" onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>
                 View Services
               </Button>
             </div>

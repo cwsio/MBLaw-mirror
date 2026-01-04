@@ -108,24 +108,37 @@ const Hero = () => {
 
 const About = () => {
   return (
-    <section id="who-we-are" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div>
+    <section id="who-we-are" className="relative bg-background">
+      <div className="flex flex-col lg:flex-row min-h-[80vh]">
+        {/* Image Side - Full width on mobile, half on desktop */}
+        <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-auto order-2 lg:order-1">
+           <img 
+            src={interiorImage} 
+            alt="Modern Law Firm Interior" 
+            className="w-full h-full object-cover"
+           />
+           {/* Blue overlay to match theme */}
+           <div className="absolute inset-0 bg-primary/30 mix-blend-multiply z-10" />
+           <div className="absolute inset-0 bg-black/10 z-10" />
+        </div>
+
+        {/* Content Side */}
+        <div className="w-full lg:w-1/2 flex flex-col justify-center p-12 lg:p-24 xl:p-32 order-1 lg:order-2">
             <motion.h2 
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-serif font-bold mb-6"
+              className="text-4xl md:text-5xl font-serif font-bold mb-8 text-primary"
             >
               Who We Are
             </motion.h2>
+            
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="space-y-6 text-lg text-muted-foreground leading-relaxed"
+              className="space-y-6 text-lg text-muted-foreground leading-relaxed mb-12"
             >
               <p>
                 MB LAW is a boutique legal practice focused exclusively on delivering real estate legal opinion letters for commercial loan transactions.
@@ -137,37 +150,34 @@ const About = () => {
                 We prioritize clarity, responsiveness, and professional precision—enabling clients to proceed with confidence at every stage of their transaction.
               </p>
             </motion.div>
-          </div>
-          <div className="relative h-full min-h-[500px] rounded-lg overflow-hidden flex items-end p-8 shadow-xl">
-            <div className="absolute inset-0">
-               <img 
-                src={interiorImage} 
-                alt="Modern Law Firm Interior" 
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-               />
-               <div className="absolute inset-0 bg-primary/30 mix-blend-multiply" />
-               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-            </div>
-            
-            <div className="relative z-10 grid grid-cols-2 gap-4 w-full">
-              <div className="flex items-center gap-3 text-white">
-                <Shield className="h-5 w-5 text-accent" />
-                <span className="font-serif font-medium">Reliable</span>
+
+            {/* Feature Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-4">
+              <div className="flex items-center gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+                    <Shield className="h-5 w-5" />
+                </div>
+                <span className="font-serif font-medium text-lg text-foreground group-hover:text-primary transition-colors">Reliable</span>
               </div>
-              <div className="flex items-center gap-3 text-white">
-                <Check className="h-5 w-5 text-accent" />
-                <span className="font-serif font-medium">Accurate</span>
+              <div className="flex items-center gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+                    <Check className="h-5 w-5" />
+                </div>
+                <span className="font-serif font-medium text-lg text-foreground group-hover:text-primary transition-colors">Accurate</span>
               </div>
-              <div className="flex items-center gap-3 text-white">
-                <Clock className="h-5 w-5 text-accent" />
-                <span className="font-serif font-medium">Efficient</span>
+              <div className="flex items-center gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+                    <Clock className="h-5 w-5" />
+                </div>
+                <span className="font-serif font-medium text-lg text-foreground group-hover:text-primary transition-colors">Efficient</span>
               </div>
-              <div className="flex items-center gap-3 text-white">
-                <PenTool className="h-5 w-5 text-accent" />
-                <span className="font-serif font-medium">Precise</span>
+              <div className="flex items-center gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+                    <PenTool className="h-5 w-5" />
+                </div>
+                <span className="font-serif font-medium text-lg text-foreground group-hover:text-primary transition-colors">Precise</span>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </section>

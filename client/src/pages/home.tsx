@@ -89,7 +89,7 @@ const Hero = () => {
               <span className="text-primary/60">Efficient execution.</span>
             </h1>
             <p className="text-lg text-primary/80 max-w-xl mb-8 leading-relaxed font-medium">
-              MB LAW is a boutique legal practice focused exclusively on delivering real estate legal opinion letters for commercial loan transactions.
+              Transactions work quickly. So do we. Trusted legal opinions for sophisticated commercial transactions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="h-14 px-8 text-base bg-primary text-white hover:bg-primary/90" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
@@ -141,13 +141,13 @@ const About = () => {
               className="space-y-6 text-lg text-muted-foreground leading-relaxed mb-12"
             >
               <p>
-                MB LAW is a boutique legal practice focused exclusively on delivering real estate legal opinion letters for commercial loan transactions.
+                MB Law is a boutique legal practice focused exclusively on delivering trusted real estate legal opinion letters for commercial loan transactions.
               </p>
               <p>
-                With extensive experience across complex financing structures, MB LAW provides borrowers and lenders with accurate, timely, and meticulously prepared opinion letters that support smooth closings and reduce friction in the deal process.
+                Drawing on extensive experience across complex financing structures, MB Law delivers precise, timely, and meticulously prepared opinion letters, supporting smooth and efficient closings.
               </p>
               <p>
-                We prioritize clarity, responsiveness, and professional precision—enabling clients to proceed with confidence at every stage of their transaction.
+                Our singular focus allows us to maintain exceptional quality and consistency, while responding with the precision and timeliness that sophisticated transactions require.
               </p>
             </motion.div>
 
@@ -189,22 +189,22 @@ const WhyUs = () => {
     {
       icon: <Clock className="h-8 w-8" />,
       title: "Responsive Service",
-      description: "Transactions move quickly, and so do we. MB LAW is committed to delivering prompt communication and reliable turnaround times."
+      description: "Transactions move quickly, and so do we. MB Law is committed to delivering prompt communication and reliable turnaround times throughout each transaction."
     },
     {
       icon: <DollarSign className="h-8 w-8" />,
-      title: "Competitive Fees",
-      description: "As a dedicated opinion practice, we offer flat-fee opinion services with transparent pricing allowing clients to plan ahead."
+      title: "Competitive, Predictable Fees",
+      description: "As a specialized opinion practice, we offer flat-fee opinion services with transparent pricing, allowing clients to plan efficiently and with certainty."
     },
     {
       icon: <PenTool className="h-8 w-8" />,
       title: "Focused Expertise",
-      description: "Our practice is dedicated to real estate legal opinion work, allowing us to provide precise, well-crafted opinions."
+      description: "Our practice is dedicated solely to real estate legal opinion work, enabling a high level of precision, consistency, and subject-matter depth."
     },
     {
       icon: <Users className="h-8 w-8" />,
       title: "Seamless Collaboration",
-      description: "We work directly with borrower’s counsel, lender’s counsel, and deal teams to streamline the closing process."
+      description: "We work closely with borrower’s counsel, lender’s counsel, and transaction teams to facilitate an efficient, coordinated and well-executed closing process."
     }
   ];
 
@@ -265,7 +265,7 @@ const Services = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Opinion Services</h2>
           <p className="text-muted-foreground text-lg">
-            MB LAW prepares a range of commonly required real estate opinion letters with a focus on consistency, accuracy, and closing-ready language tailored to the needs of each deal.
+            MB Law prepares a comprehensive range of real estate opinion letters with a focus on clarity, consistency, and accuracy, and language tailored to the needs of each deal. Our opinion work is carefully structured to align with market standards while addressing deal-specific considerations.
           </p>
         </div>
 
